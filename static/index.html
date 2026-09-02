@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YuWMS 仓储控制台</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <section class="login-screen" id="loginScreen" hidden>
+      <form class="login-card" id="loginForm">
+        <div class="brand login-brand">
+          <span class="mark">W</span>
+          <div>
+            <strong>YuWMS</strong>
+            <small>账户登录 / 权限控制</small>
+          </div>
+        </div>
+        <h1>登录仓储控制台</h1>
+        <label class="field">账号
+          <input name="username" autocomplete="username" placeholder="admin">
+        </label>
+        <label class="field">密码
+          <input name="password" type="password" autocomplete="current-password" placeholder="admin123">
+        </label>
+        <div class="login-error" id="loginError" hidden></div>
+        <button class="primary full" type="submit"><span aria-hidden="true">→</span>登录</button>
+        <div class="account-hints">
+          <strong>默认演示账号</strong>
+          <span>admin/admin123：系统管理员</span>
+          <span>supervisor/wms123：仓库主管</span>
+          <span>raw/raw123：原料仓操作</span>
+          <span>fg/fg123：成品仓操作</span>
+          <span>pkg/pkg123：包材仓操作</span>
+          <span>equip/equip123：设备部备件</span>
+          <span>tms/tms123：运输调度</span>
+          <span>view/view123：只读查看</span>
+        </div>
+      </form>
+    </section>
+
+    <div class="shell" id="appShell" hidden>
+      <aside class="side">
+        <div class="brand">
+          <span class="mark">W</span>
+          <div>
+            <strong>YuWMS</strong>
+            <small>原料 / 成品仓控制台</small>
+          </div>
+        </div>
+        <nav class="nav" id="nav"></nav>
+        <div class="side-footer">
+          <button class="ghost full" id="resetDemo" type="button"><span aria-hidden="true">↻</span>重置演示数据</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">自研 WMS / SQLite 本地账套</p>
+            <h1 id="pageTitle">总览</h1>
+          </div>
+          <div class="top-actions">
+            <label class="search">
+              <span aria-hidden="true">⌕</span>
+              <input id="globalSearch" type="search" placeholder="搜索货品、SSCC、库位、单号">
+            </label>
+            <span class="user-badge" id="userBadge" hidden></span>
+            <button class="ghost" id="logoutBtn" type="button" hidden><span aria-hidden="true">↩</span>退出</button>
+            <span class="live-dot">运行中</span>
+          </div>
+        </header>
+
+        <section class="kpis" id="kpis"></section>
+        <section class="notice" id="notice" hidden></section>
+        <section class="content" id="content"></section>
+      </main>
+    </div>
+
+    <template id="emptyState">
+      <div class="empty">没有匹配数据</div>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local runtime data
+wms.db
+wms.db-*
+*.sqlite
+*.sqlite3
+
+# Local logs and temporary files
+*.log
+tmp/
+exports/
+downloads/
