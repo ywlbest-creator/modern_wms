@@ -1,12 +1,12 @@
 # YuWMS 本地版
 
-这是基于当前目录旧 WMS 资料拆解后重做的一套轻量 WMS。它不依赖旧 Windows 客户端，后端使用 Python 标准库 + SQLite，前端是本地 Web 控制台。
+YuWMS 是一套自行开发的轻量 WMS/TMS 本地 Web 系统，后端使用 Python 标准库 + SQLite，前端使用原生 HTML/CSS/JavaScript。
 
-## 旧资料分析结论
+## 开源授权与原创性说明
 
-- `WMS client/CLIENT0427/FormConfig` 里能看到原系统核心表单：`InstockInformList`、`InStockTbl`、`OutstockInformList`、`OutStockPickDt`、`MoveEntryList`、`InventoryQry_c`、`StockChkDtTbl`、`StcAdjustList`。
-- `RMR_SOP_013 原料WMS系统标准操作程序.docx` 说明了实际操作链路：入库通知、收货、SSCC 标签、RF 上架、移库、出库通知、波次/分拣、投料确认、返品入库、盘点调整、属性变更。
-- `WMS操作指南` 里的文件名补充了现场场景：退货入库、补货退单、库存调整、库位查询、成品/颗粒盘点、手持验货、手持移库、手持上架。
+- 本仓库代码为自行开发实现，未包含第三方专有 WMS 系统源代码、安装包或私有配置文件。
+- 仓库源代码按 MIT License 开源，详见 `LICENSE`。
+- `wms.db` 为本地运行数据文件，已通过 `.gitignore` 排除，不作为开源代码发布内容。
 
 ## 新系统已实现
 
@@ -197,23 +197,23 @@ view：只能导出，不能导入
 
 ## SOP 验收
 
-已按主 SOP 和现场操作指南做自动验收，记录见：
+已按系统核心业务流程做自动验收，记录见：
 
 ```text
-/Users/yuruihang/Desktop/wms/modern_wms/SOP_VERIFICATION.md
+SOP_VERIFICATION.md
 ```
 
 重新验收命令：
 
 ```bash
-cd /Users/yuruihang/Desktop/wms
-python3 modern_wms/sop_flow_test.py
+cd modern_wms
+python3 sop_flow_test.py
 ```
 
 数据库文件：
 
 ```text
-/Users/yuruihang/Desktop/wms/modern_wms/wms.db
+wms.db
 ```
 
 ## 后续可扩展

@@ -2,26 +2,11 @@
 
 验收日期：2026-06-05
 
-## 已复读资料
+## 验收范围
 
-- `RMR_SOP_013 原料WMS系统标准操作程序.docx`
-- `WMS操作指南/WMS登录.docx`
-- `WMS操作指南/3726入库上架操作.docx`
-- `WMS操作指南/7002新件入库操作指引.docx`
-- `WMS操作指南/手持上架操作.docx`
-- `WMS操作指南/原料在电脑中移库操作.docx`
-- `WMS操作指南/手持移库操作.docx`
-- `WMS操作指南/3637盘点.docx`
-- `WMS操作指南/3726盘点.docx`
-- `WMS操作指南/库存调整.docx`
-- `WMS操作指南/出口出库操作.docx`
-- `WMS操作指南/分拣单打印.docx`
-- `WMS操作指南/退货入库操作.docx`
-- `WMS操作指南/成品盘点.docx`
-- `WMS操作指南/库位查询.docx`
-- `WMS client/CLIENT0427/FormConfig` 中入库、出库、移库、盘点、属性变更相关表单配置名称
+本记录覆盖 YuWMS/YuTMS 自研系统的核心业务流程、权限控制、Excel 导入导出、库存追溯、TMS 运输执行和操作日志。
 
-## SOP 对应新版功能
+## SOP 对应功能
 
 - 个人账号登录：`/api/login`，会话 Cookie，角色权限。
 - 入库通知、收货、SSCC、上架：`/api/inbounds`，创建入库单、库存批次和流水。
